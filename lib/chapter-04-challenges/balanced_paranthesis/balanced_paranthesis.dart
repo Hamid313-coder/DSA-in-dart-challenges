@@ -1,16 +1,15 @@
 import 'package:console/chapter-04-challenges/stack.dart';
 
 bool isBalancedParanthesis(String text) {
-  final open = '('.codeUnitAt(0);
-  final close = ')'.codeUnitAt(0);
+  final open = '(';
+  final close = ')';
   final stack = Stack([]);
 
-  for (final codeUnite in text.codeUnits) {
-    if (codeUnite == open) {
-      stack.push(codeUnite);
-    } else if (codeUnite == close) {
+  for (final char in text.split('')) {
+    if (char == open) {
+      stack.push(char);
+    } else if (char == close) {
       if (stack.isEmpty()) {
-        print('ppopo');
         return false;
       }
       stack.pop();
